@@ -1,2 +1,4 @@
-# suxceed
-Ecommerce Freelance Template
+Suxceed
+=========
+
+Vinny's Freelance Ecommerce Website
