@@ -11,22 +11,22 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="{{ page.seoLang }}">
 <!--<![endif]-->
+
 <head>
 	<meta charset="utf-8" />
 	<title>{{ page.title }}</title>
 	<meta name="keywords" content="{{ page.keywords }}" />
 	<meta name="description" content="{{ page.description }}" />
-	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
 
 	{% if site.favicon %}
 		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
 		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
 	{% endif %}
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	{% include basekit.headScript %}
 </head>
+
 <body class="{{ page.backgroundClass }}">
 
 	{% block content %}
@@ -34,23 +34,29 @@
 
     {% include basekit.bodyScript %}
 
-    
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
+	<!-- JQUERY -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-    	<!-- Nav Menu Script -->
-        <script>
-            // Toggles class open to display/hide the whole navigation
-            $( ".navigation-toggle" ).click(function() {
-                $( ".bk-extendednavigation" ).toggleClass( "open" );
-            });
-            // Togglse class open to display/hide folders
-            $( ".navigation-item.folder" ).each(function() {
-                $( this ).click(function() {
-                    $( this ).toggleClass( "open" );
-                });
-            });
-        </script>
+    <!-- PLUGINS -->
+    <script src="{{asset('js/main.js')}}"></script>
+
+	<!-- IMAGES LOADED -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+
+	<!-- MASONRY -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
+
+	<script>
+		var container = document.querySelector('.product-list');
+		imagesLoaded( container, function() {
+			var msnry = new Masonry( container, {
+				itemSelector: '.product-item'
+			});
+		});
+	</script>
+
+	{% block scripts %}
+	{% endblock %}
 
 </body>
 </html>

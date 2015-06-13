@@ -1,4 +1,2 @@
-Suxceed
-=========
-
-Vinny's Freelance Ecommerce Website
+# odense
+BaseKit Ecommerce Template

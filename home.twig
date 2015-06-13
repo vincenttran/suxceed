@@ -1,20 +1,67 @@
 {% extends "layout.twig" %}
-
 {% block content %}
 
-<!-- Container -->
-<div class="container">
+<!-- CONTAINER -->
+<div class="template-container">
+	<div class="home-page">
 
-	<!-- Page Content -->
-	<section class="template-content">
+<!-- Homepage Feature -->
+{{widget('feature', 'featurehome', {
+	"header": "profile",
+	"defaultBgImg": asset('images/feature-bg.jpg'),
+	'positionTopPercentage': '0',
+	'showBtn': true,
+	buttonText: "Lorem Ipsum"
+})|raw}}
+<!-- End Homepage Feature -->
 
-		<!-- Main Widet Zone -->
-	   	{{zone('main')|raw}}
+		<!-- HEADER -->
+		{% include "includes/header.twig" %}
+		
+	</div>
 
-	</section>
-	<!-- End Page Content -->
+	<!-- MAIN SECTION -->
+	<div role="main" id="main">
+
+		<div class="container">
+
+			<!-- MAIN ZONE -->
+			{{zone('main')|raw}}
+
+		</div>
+
+	</div>
+
+	<!-- FOOTER -->
+	{% include "includes/footer.twig" %}
 
 </div>
-<!-- End Container -->
+<!-- END CONTAINER -->
 
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Background Check 
+	<script src="{{asset('js/background-check.js')}}"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Specific images
+			BackgroundCheck.init({
+				targets: '.navigation-list',
+				images: '.responsiveslideshow__figure'
+			});
+			BackgroundCheck.refresh();
+		}); 
+
+
+
+
+		(function Forever(){
+		    BackgroundCheck.refresh();
+		    setTimeout(Forever, 1000);
+		})();
+	</script>-->
+	
 {% endblock %}

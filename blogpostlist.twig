@@ -9,21 +9,19 @@
 	{% include "includes/header.twig" %}
 
 	<!-- MAIN SECTION -->
+	{{widget('blogsearch', 'blogsearch', {})|raw}}
+
 	<div role="main" id="main">
 
 		<div class="container">
 
 			<!-- MAIN ZONE -->
-			{{zone('main')|raw}}
+			{{widget('blogpostlist', 'allblogposts', {})|raw}}
 
 		</div>
 
 	</div>
-
-	<div class="default-profile">
-		{{widget('profile', 'main-profile', { 'profileType':'form', 'formTitle':'Sign up to our newsletter'})|raw}}
-	</div>
-
+	
 	<!-- FOOTER -->
 	{% include "includes/footer.twig" %}
 

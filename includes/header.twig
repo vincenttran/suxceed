@@ -1,18 +1,11 @@
-<!-- Header -->
 <header class="template-header">
-    <div class="header-wrapper">
-        <div class="headercontent-wrapper">
-            <div class="header-companyname">
-                {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-            </div>
-            <div class="header-extendednavigation">
-                {{widget('extendednavigation', 'extendednavigation', {})|raw}}
-            </div>
-        </div>
-        <div class="header-basket">
-            {{widget('ecombasket', 'shopbasket', {})|raw}}
-        </div>
-    </div>
+	<div class="container">
+		<div class="brand">
+			{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+			{{widget('companyname', 'companyname', {"business": "ODENSE", "showTplWidget":"0"})|raw}}
+		</div>
+		<nav class="template-nav">
+			{{widget('extendednavigation', 'header-nav', {"align":"right"})|raw}}
+		</nav>
+	</div>
 </header>
-
-<!-- End Header -->
