@@ -196,6 +196,10 @@ button,
     padding: 20px 1em;
     position: relative;
 
+    @media @tablet-860px {
+        min-height: 95px;
+    }
+
     @media @mobile-650px {
         padding: 20px 0;
     }
@@ -552,7 +556,11 @@ button,
     }
 }
 
-
+.navigation-body .navigation-item {
+    @media @mobile {
+        border-bottom: 0;
+    }
+}
 
 // Slideshow
 // ---------------
