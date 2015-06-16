@@ -169,6 +169,19 @@ form.ecomproductslist__form {
 
 .ecomproductslist {
 
+	// Section title, filters section
+	.listing-header {
+		padding-bottom: 20px;
+	}
+ 
+	.listing-title {
+		padding-bottom: 25px;
+	}
+ 
+	.listing-order {
+		padding-bottom: 30px 0 0;
+	}
+
 	.product-item {
 		float: left;
 		padding: 0 20px 24px;
@@ -217,9 +230,14 @@ form.ecomproductslist__form {
 	.product-item-image .image-link {
 		height: auto;
 		width: auto;
+		max-height: 450px;
 		@media @mobile-650px {
 			margin-top: 25px;
 		}
+	}
+
+	.product-body {
+		margin-bottom: 30px;
 	}
 
 	.product-item-title {
@@ -542,7 +560,7 @@ form.ecomproductslist__form {
 	// Product category and tags wrapper
 	.product-actions {
 		padding: 0;
-		margin: 30px 0 25px;
+		margin: 0 0 25px;
 	}
 
 	// Product category and tags
@@ -566,6 +584,10 @@ form.ecomproductslist__form {
 
 		.product-attribute-title {
 			color: lighten(@font-swatch4-color, 20%);
+				&:after {
+				content: ":";
+				display: inline-block;
+			}
 		}
 
 		.tag-link {
@@ -590,6 +612,7 @@ form.ecomproductslist__form {
 
 		&:before {
 			left: 15px;
+			top: 0.3em;
 		}
 
 		p {
@@ -648,6 +671,15 @@ form.ecomproductslist__form {
 		padding-right: 0;
 	}
 
+	.summary-title {
+		padding-bottom: 10px;
+	}
+ 
+	// Continue shopping button
+	.continue-shopping  {
+		margin-top: 20px;
+	}
+
 	// Product item title
 	.summary-item-link {
 		color: @color-swatch4;
@@ -669,7 +701,7 @@ form.ecomproductslist__form {
 		position: relative;
 		height: 22px;
 		width: 22px;
-
+		color: @color-swatch4;
 		&:hover {
 			background-color: transparent;
 		}
@@ -678,7 +710,7 @@ form.ecomproductslist__form {
 	// Adds a diamond style background shape the to the plus and remove quantity buttons
 	.quantity-minus:after, 
 	.quantity-plus:after {
-		background-color: @color-swatch3;
+		background-color: @color-swatch7;
 		content: "";
 		display: inline-block;
 		left: 0;
@@ -686,7 +718,6 @@ form.ecomproductslist__form {
 		height: 22px;
 		width: 22px;
 		position: absolute;
-		.transform(rotate(45deg));
 		z-index: -1;
 	}
 
@@ -699,6 +730,11 @@ form.ecomproductslist__form {
 		font-size: 20px;
 		text-align: right;
 	}
+}
+
+.summary-form {
+	margin-top: 35px;
+	text-align: right;
 }
 
 .ecombasket {
