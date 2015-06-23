@@ -19,9 +19,6 @@
 
 @import "@{templateCommon}/bk-less-framework.less";
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700);
-
 
 // Theme Includes
 // --------------
@@ -60,6 +57,11 @@
     }
 }
 
+.template-container {
+    position: relative;
+    overflow: hidden;
+}
+
 
 
 // Form Styles
@@ -70,7 +72,7 @@
 legend {
     color: @font-swatch2-color;
     font-family: @font-swatch2-font-family;
-    font-size: bkscale(@font-swatch3-font-size, 0.95);
+    font-size: bkscale(@font-swatch3-font-size, 0.98);
     font-weight: @font-swatch4-font-weight;
     line-height: @font-swatch2-line-height;
     margin-bottom: 25px;
@@ -193,95 +195,70 @@ button,
 .blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
     background-color: white;
     border-bottom: 1px solid @color-swatch7;
-    padding: 20px 1em;
+    padding: 20px;
     position: relative;
 
-    @media @tablet-860px {
-        min-height: 95px;
+    @media @tablet {
+        padding: 20px 0 20px 20px;
     }
 
     @media @mobile-650px {
-        padding: 20px 0;
+        margin: 0;
+        padding: 20px 0 20px 25px;
     }
 
+    // Header flexbox alignment
     .container {
         // Flex
         .flex;
         .flex-display;
-        .flex-wrap;
-    }
-
-    .brand, .company-link {
-        // Flex
-        .flex-display;
-        .flex(1 1 auto);
-        .flex-grow(1);
+        .flex-wrap(wrap);
+        .align-content(flex-start);
+        .align-items(center);
+        .justify-content(flex-start);
+        margin: 0 auto;
+        position: relative;
 
         @media @tablet {
-            flex: 1 1 80%;
+            .flex-wrap(nowrap);
+        }
+
+        @media @mobile-650px {
+            margin: 0;
         }
     }
 
-    // Logo and company name flex
+    // Logo & Companyname
     [data-widget-type="logo"], 
     [data-widget-type="companyname"] {
-        .flex(0 0 auto);
-        max-width: 100%;
+        @media @tablet {
+            z-index: 9999;
+        }
     }
 
+    // Logo
     [data-widget-type="logo"] {
-        .align-self(flex-start);
-    }
-
-    // Keeps companyname vertically center no matter the size
-    [data-widget-type="companyname"] {
-        .align-self(center);
-    }
-
-    // Add space between logo and company name
-    .bk-logo {
         margin-right: 8px;
+        max-width: 100%;
 
         .logo-link {
             display: block;
         }
+
+        img {
+            max-height: 300px;
+        }
     }
 
-    // Company name colour
+    // Companyname
+    [data-widget-type="companyname"] {
+        @media @tablet {
+            padding-right: 60px;
+        }
+    }
+
     .company-link {
         color: @font-swatch4-color;
-    }
-
-    // Color of navigation links when overlaying a feature image
-    .navigation-item {
-        &.selected {
-            color: @color-swatch4;
-        }
-        .item-name {
-            color: @color-swatch5;
-
-            &:hover {
-                color: @color-swatch4;
-            }
-        }
-    }
-}
-
-// Logo & Company Name
-.brand {
-    .flex-wrap(wrap);
-
-    .company-link {
-        text-transform: uppercase;
-        vertical-align: text-bottom;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
-    .bk-logo img {
-        max-height: 300px;
     }
 }
 
@@ -290,55 +267,20 @@ button,
 .blogpost-page [data-widget-type="blogpost"] + .template-header {
     background-color: transparent;
     border-bottom: none;
+    margin: 0;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 9999;
 
-    // Container for logo and navigation
     .container {
-        margin: 0 25px;
+        margin: 0 0 0 15px;
         max-width: 100%;
 
-        // Flex
-        .flex;
-        .flex-display;
-        .flex-wrap;
-
-        @media @tablet-860px {
-            margin: 0 25px;
+         @media @mobile-650px {
+            margin: 0;
         }
-    }
-
-    // Make sure branding and navigation gets even split
-    .brand, 
-    .company-link {
-
-        // Flex
-        .flex-display;
-        .flex(1 1 auto);
-        .flex-grow(1);
-
-        @media @tablet {
-            flex: 1 1 80%;
-        }
-    }
-
-    // Keeps company name vertical center of the logo no matter the size
-    [data-widget-type="logo"], [data-widget-type="companyname"] {
-        .flex(0 0 auto);
-        .align-self(center);
-    }
-
-    // Add space between logo and company name
-    .bk-logo {
-        margin-right: 8px;
-    }
-
-    // Company name colour when placed over a feature
-    .company-link {
-        color: @font-swatch10-color;
     }
 
     // Color of navigation links when overlaying a feature image
@@ -347,7 +289,7 @@ button,
             color: @font-swatch6-color-hover;
         }
         .item-name {
-            color: @font-swatch6-color;
+            color: fade(@font-swatch6-color, 70%);
 
             &:hover {
                 color: @font-swatch6-color-hover;
@@ -370,23 +312,50 @@ button,
 // Universal navigation styling
 .navigation-item {
 
-    &:last-child .item-name {
-        padding-right: 0;
+    &:hover .navigation-list--children {
+        display: none;
+    }
+
+    .item-name {
+        color: fade(@font-swatch6-color, 65%);
+        text-overflow: initial;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 26px;
+    }
+
+    &:first-child .item-name {
+        padding-left: 0;
     }
 
     // Navigation dropdown
     &.folder {
+        .transition(all 0.2s ease-in-out);
+
+        &.open, &:hover {
+            background-color: fade(@color-swatch6, 8%);
+        }
+
+        &.open, &:hover {
+            .navigation-list--children {
+                background-color: fade(@color-swatch6, 8%);
+                display: block;
+                opacity: 1;
+                height: auto;
+            }
+        }
+
         ul {
-            text-align: center;
+            text-align: left;
 
             .item-name {
-                padding: 6px 12px;
+                padding: 10px 12px 8px;
             }
         }
 
         // Navigation dropdown arrow
         span.item-name:after {
-            color: rgba(0,0,0, 0.45);
+            color: fade(@color-swatch6, 45%);
             content: "\f0dd";
             font-family: FontAwesome;
             font-size: 14px;
@@ -397,17 +366,61 @@ button,
     }
 }
 
+ul.navigation-list--children {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 125px;
+    max-width: 160px;
+}
+
 .navigation-list {
+    height: 100%;
     margin: 0;
 }
 
-.template-nav {
-    .align-self(flex-start);
-    .flex-grow(1);
-    .flex(1 0 auto);
+div[data-widget-type="extendednavigation"] {
+    .flex(1 1 auto);
+    padding-right: 85px;
 }
 
 @media @tablet {
+
+    div[data-widget-type="extendednavigation"] {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+
+    .navigation-body {
+        background-color: @color-swatch1;
+        -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        position: fixed;
+        top: 0;
+        right: -80%;
+        bottom: 0;
+        margin: 0;
+        overflow-x: scroll;
+        padding-top: 20px;
+        height: 100vh;
+        width: 75%;
+        .transition(right 400ms ease);
+        z-index: 9999;
+
+        &.open {
+            right: 0;
+        }
+    }
+
+    .navigation-body.open .navigation-item.folder ul {
+        display: block;
+        padding: 0 15px;
+    }
 
     // Navigation Toggle
     // -----------------
@@ -415,17 +428,17 @@ button,
     .navigation-toggle {
        
         // Displays as icon's middle bar
-        background-color: black;
+        background-color: @font-swatch6-color-hover;
         background-clip: content-box;
         display: inline-block;
         height: 47px;
-        margin: 4px 0 0;
+        margin: 0;
         padding: 22px 10px 22px 15px;
         position: fixed;
-        right: 15px;
+        right: 25px;
+        top: 24px;
         text-indent: -9999px;
         .transition(background-color 0.35s ease-in);
-        overflow: hidden;
         width: 50px;
         z-index: 99999;
 
@@ -454,67 +467,42 @@ button,
         }
 
         &:hover {
-            background-color: black;
+            background-color: darken(@font-swatch6-color-hover, 15%);
         }
 
         // Toggle Button open state
         // ------------------------------
 
-        .open & {
+        .open {
             background-color: transparent;
             .transition(background-color 0s ease-out);
             z-index: 100000;
 
             &:before {
                 top: 23px; 
-                background: black; 
+                background: @font-swatch6-color-hover; 
                 .transform(rotate(45deg));
             }
             &:after {
                 bottom: 21px; 
-                background: black; 
+                background: @font-swatch6-color-hover; 
                 .transform(rotate(-45deg));
             }
         }
     }
 
-    // Navigation slide out
-    .template-nav {
-        // Flex
-        .flex-display;
-        .justify-content(flex-end);
-        padding: 0;
-    }
 
     // Slide out navigation
     .navigation-body {
-        background-color: @color-swatch1;
-        -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
-        -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
-        box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
-        position: fixed;
-        top: 0;
-        right: -80%;
-        bottom: 0;
-        margin: 0;
-        overflow-x: scroll;
-        padding-top: 100px;
-        height: 100%;
-        min-width: 75%;
-        max-width: 85%;
-        .transition(right 400ms ease);
-        z-index: 9999;
-
-        &.open {
-            right: 0;
-        }
 
         .navigation-list {
+            margin-top: 60px;
             text-align: right;
+            max-height: 70%;
+            overflow-x: scroll;
         }
 
-        .navigation-item {
-            border-bottom: 1px solid lighten(@color-swatch7, 3%);
+        .navigation-list .navigation-item {
             display: block;
             width: 100%;
 
@@ -523,23 +511,29 @@ button,
             }
 
             &.folder ul {
+                margin-top: 0;
                 text-align: right;
             }
 
             .item-name {
-                padding: 10px 25px 10px 50px;
+                padding: 14px 25px 14px 50px;
             }
         }
+    }
+
+    ul.navigation-list--children  {
+        position: relative;
+        min-width: 100%;
     }
 
     // Navigation button overlay
     .bk-extendednavigation + #page-zones__template-widgets__extendednavigation-header-nav-bk-overlay {
         position: fixed!important;
-        right: 20px!important;
+        right: 15px!important;
         left: initial!important;
-        top: 20px!important;
+        top: 18px!important;
         bottom: 0px!important;
-        width: 40px!important;
+        width: 50px!important;
         height: 50px!important;
     }
 
@@ -549,18 +543,20 @@ button,
         left: inherit!important;
         right: 0!important;
         top: 85px!important;
-        max-width: 75%;
+        width: 75%;
         height: 100%!important;
-        width: 100%!important;
+        width: 75%!important;
         z-index: 99999!important;
     }
 }
 
-.navigation-body .navigation-item {
+.navigation-toggle {
     @media @mobile {
-        border-bottom: 0;
+        right: 15px;
     }
 }
+
+
 
 // Slideshow
 // ---------------
@@ -569,6 +565,7 @@ button,
 
     .slides-list {
         position: relative;
+        height: 650px;
         height: 100vh;
     }
 
@@ -583,18 +580,8 @@ button,
         .transition(1s all ease-in-out);
         visibility: hidden;
 
-        // Targeting the slideshow loops currently non visible slides
-        &[style="display: none;"] {
-            top: 0;
-            left: 0;
-            right: 0;
-            opacity: 0;
-            visibility: hidden;
-        }
-
         // The active state for the slideshows next and previous controls
-        &.current,
-        &[style="display: none;"] + .slide-item {
+        &.current {
             opacity: 1;
             visibility: visible;
             z-index: 1;
@@ -603,9 +590,9 @@ button,
 
     // Image element
     figure {
-        background-position: center;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover!important;
+        min-height: 0;
         height: 100vh;
     }
 
@@ -782,7 +769,7 @@ button,
 
             &.pause {
                 &:before, &:after {
-                    background-color: white;
+                    background-color: @font-swatch6-color;
                     content: "";
                     display: inline-block;
                     margin: 0;
@@ -808,15 +795,17 @@ button,
     // Slide pagination
     .slide-pagination {
         bottom: 0;
+        .flex-display(inline-flex);
+        .flex-grow(1);
+        .align-items(center);
+        .align-content(center);
         position: absolute;
-        height: 100%;
         right: 40px;
-        top: 45%;
+        top: 0;
         z-index: 2;
 
         @media @mobile-650px {
             right: 25px;
-            top: 42%;
         }
 
         // Pagination list element
@@ -851,7 +840,11 @@ button,
 // ---------------
 
 div[role="main"] {
-    padding: 3em 1em 0em;
+    padding: 3em 1em;
+
+    @media @tablet-860px {
+        padding: 3em 0;
+    }
 
     @media @mobile-650px {
         padding: 2em 0;
@@ -920,7 +913,7 @@ div[role="main"] {
                 padding: 0;
 
                 @media @mobile-650px {
-                    .flex-grow(1);
+                    .flex(1 0 auto);
                 }
 
                 // Bring button over input

@@ -5,15 +5,34 @@
 <div class="template-container">
 	<div class="home-page">
 
-<!-- Homepage Feature -->
-{{widget('feature', 'featurehome', {
-	"header": "profile",
-	"defaultBgImg": asset('images/feature-bg.jpg'),
-	'positionTopPercentage': '0',
-	'showBtn': true,
-	buttonText: "Lorem Ipsum"
-})|raw}}
-<!-- End Homepage Feature -->
+		<!-- FULL SCREEN SLIDESHOW -->
+		{{widget('responsiveslideshow', 'slideshow', {
+			'duration':'4',
+			'transSpeed': '2000',
+			'transType': 'fade',
+			'showButtons': false,
+			'showBullets': true,
+			'allowPause': false,
+			'allowLoop': false,
+			'crop': true,
+			'images':[
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-5.jpg')
+			},
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-3.jpg')
+			},
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-4	.jpg')
+			}
+			]
+		})|raw}}
 
 		<!-- HEADER -->
 		{% include "includes/header.twig" %}
@@ -32,41 +51,10 @@
 
 	</div>
 
-<div class="instagram">
-<!-- SnapWidget -->
-<iframe src="http://snapwidget.com/sc/?u=c3V4Y2VlZGFwcGFyZWx8aW58MTUwfDN8M3wwMDAwMDB8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=130615" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:1200px; height:150px"></iframe>
-</div>
-
 	<!-- FOOTER -->
 	{% include "includes/footer.twig" %}
 
 </div>
 <!-- END CONTAINER -->
 
-{% endblock %}
-
-{% block scripts %}
-
-	<!-- Background Check 
-	<script src="{{asset('js/background-check.js')}}"></script>
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			// Specific images
-			BackgroundCheck.init({
-				targets: '.navigation-list',
-				images: '.responsiveslideshow__figure'
-			});
-			BackgroundCheck.refresh();
-		}); 
-
-
-
-
-		(function Forever(){
-		    BackgroundCheck.refresh();
-		    setTimeout(Forever, 1000);
-		})();
-	</script>-->
-	
 {% endblock %}

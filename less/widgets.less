@@ -15,64 +15,10 @@
 //  1. Contact Form
 // -----------------------------
 
-.contactform {
-
+.contactform__legend {
+    display:none;
 }
 
-// -----------------------------
-// 4.  #Feature
-// -----------------------------
-
-// Feature Overlay
-.feature-overlay {
-    background-color: fade(@color-swatch4,90%);
-}
-
-
-// Feature Background (Image)
-// --------------------------
-
-.feature__background-image {
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: table;
-    min-height: 900px;
-    height: 900px;
-    width: 100%;
-    @media @tablet {
-        min-height: 300px;
-        max-height: 500px;
-    }
-    @media @mobile {
-        min-height: 200px;
-        max-height: 400px;
-    }
-    &:after {
-        display: none;
-    }
-}
-
-
-// Feature Content Wrap
-// --------------------
-
-.feature__content-wrap {
-    background: fade(@color-swatch7, 40%);
-    display: table-cell;
-    padding: 30px 40px;
-    text-align: left;
-    vertical-align: middle;
-    @media @tablet {
-        text-align: center;
-    }
-    @media @mobile {
-        padding: 30px 10px;
-    }
-}
 
 
 // -----------------------------
@@ -94,7 +40,7 @@ ul.tweet-list {
 	.border-radius(6px);
 	padding: 25px;
 
-	// Take the account name from the first tweet and position it outside the tweet container
+	/*
 	&:first-child .account-link {
 		top: -50px;
 		position: absolute;
@@ -105,13 +51,42 @@ ul.tweet-list {
 		.account-link {
 			display: block;
 		}
-	}
+	}*/
 
-	// Hide the account name on any tweet that's not the first
+    &:first-child .tweet-content{
+        &:before {
+            content: "Latest tweets";
+            top: -50px;
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 100%;
+            font-family: "Playfair Display", "Futura", Helvetica Neue, sans-serif;
+            font-size: 27.2px;
+            font-weight: 600;
+        }
+
+        &:after {
+            color: #87ad92;
+            content: "\f099";
+            font-family: 'FontAwesome', sans-serif;
+            position: absolute;
+            right: 0;
+            top: -50px;
+            font-size: 24px;
+        }
+    }
+
+	/*
 	&:not(:first-child) .account-link {
 		display: none;
 		visibility: hidden;
-	}
+	}*/
+
+    .account-link {
+        display: none;
+        visibility: hidden;
+    }
 
 	// Re-add margin to final tweet
 	&:last-child {
@@ -150,6 +125,11 @@ ul.tweet-list {
 .account-name {
 	font-family: @font-swatch2-font-family;
 	font-size: bkscale(@font-swatch2-font-size, 0.85);
+
+    @media @tablet-860px {
+        font-size: bkscale(@font-swatch2-font-size, 0.75);   
+        line-height: bkscale(@font-swatch2-font-size, 0.75);
+    }
 
 	// Adds twitter icon to the right of the account name
 	&:after {
@@ -309,22 +289,28 @@ hr.rule {
 
 
 // -----------------------------
-//  8. Gallery Widget
+// 6.  Gallery
 // -----------------------------
 
-.widget__gallery {
 
+// Gallery Layout
+// --------------
+
+.widget__gallery {
     // Gallery List
-    ul.gallery-list {
+    .gallery-list {
         .clearfix;
         padding-top: 10px;
+        &:hover li {
+            opacity: 0.3;
+        }
     }
-
     // Gallery Item
-    li.gallery-item {
+    .gallery-item {
         display: inline-block;
         float: left;
         margin-right: 3.33%;
+        overflow: hidden;
         position: relative;
         width: 31%;
         margin-bottom: 2%;
@@ -348,26 +334,29 @@ hr.rule {
             width: 100%;
             margin-bottom: 4%;
         }
-
         .image-link {
             -webkit-filter: grayscale(0%);
             .transition(all 0.5s ease-in-out);
         }
         &:hover {
             opacity: 1!important;
+
             .image-link {
                 background-blend-mode: multiply;
+                opacity: 0.85;
+                -webkit-filter: grayscale(25%);
                 text-decoration: none;
             }
+
             figcaption {
-                background-color: fade(@color-swatch4, 65%);
-                .flex-display(flex);
+                background-color: fade(@color-swatch4, 85%);
                 height: 100%;
                 opacity: 1;
-                .transform(scale(0.85));
-                .transition(all 0.5s ease-in-out);
+                .transition(left 0.5s ease-in-out);
                 visibility: visible;
                 overflow: hidden;
+                left: 0;
+
                 &:after {
                     content: "";
                     position: absolute;
@@ -386,27 +375,30 @@ hr.rule {
 
     // Hide Figcaption
     figcaption {
-
-        // Flex
-        .flex-display(flex);
-        .align-items(center);
-        .flex-direction(column);
-        .justify-content(center);
-        -ms-flex-pack: center;
-
         position: absolute;
         display: block;
         height: 0;
         margin: 0;
-        padding: 0 15px;
+        padding: 0 30px;
         opacity: 0;
-        text-align: center;
+        text-align: left;
+        left: -100%;
+        bottom: 0;
         top: 0;
-        .transform(scale(0.85));
         width: 100%;
         visibility: hidden;
-        @media @mobile {
+
+        @media @mobile-650px {
             left: 0;
+        }
+
+        .caption-link {
+            .flex-display;
+            .flex-wrap(wrap);
+            .align-items(center);
+            .align-content(center);
+            height: 100%;
+            width: 100%;
         }
 
         .caption-link:hover {
@@ -419,12 +411,14 @@ hr.rule {
             font-family: @font-swatch4-font-family;
             letter-spacing: 1px;
             font-size: 15px;
+            line-height: 24px;
             display: block;
-            padding: 6px 12px 5px;
+            padding: 6px 0 5px;
         }
 
         .image-description {
             color: darken(@color-swatch1, 15%);
+            display: block;
             font-size: 15px;
             line-height: 23px;
         }
@@ -437,13 +431,53 @@ hr.rule {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-
         // Hide Inline Image
         .image {
             display: none;
         }
     }
 }
+
+
+
+// Gallery Images
+// --------------
+
+// Use Background-image Method
+.gallery__image-link {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+// Hide Img Element
+.gallery__image {
+    display: none;
+}
+
+
+// Gallery Image Captions
+// ----------------------
+
+// Hide Caption
+.gallery__caption {
+    display: none;
+    margin: 0;
+    padding: 20px;
+    background-color: @color-swatch7;
+}
+
+// Show Caption
+.image-link:hover .image-gallery__caption {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 
 // -----------------------------
 // 7.  Slideshow
@@ -468,7 +502,7 @@ div[role="main"] {
 
         // Slide Caption
         .caption {
-            background-color: fade(@color-swatch1, 40%);
+            background-color: fade(@color-swatch1, 75%);
             display: inline-block;
             margin: 0 auto;
             max-width: 80%;
@@ -516,10 +550,6 @@ div[role="main"] {
 
                 @media @tablet {
                     top: 125px;
-                }
-
-                &:hover {
-                    background-color: fade(@color-swatch1, 80%);
                 }
 
                 .icon:before {
@@ -637,17 +667,7 @@ div[role="main"] {
     }
 }
 
-// -----------------------------
-//  1. Instagram widget
-// -----------------------------
 
-.instagram {
-    margin: 0px auto;
-    display: table;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
 
 // -----------------------------
 //  1. Company Description

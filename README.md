@@ -1,4 +1,2 @@
-# Suxceed
+# odense
 BaseKit Ecommerce Template
-
-Vincent Tran Freelance
