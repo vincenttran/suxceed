@@ -13,6 +13,12 @@
     .feature__content-wrap {
         padding: 160px;
         background-color: white;
+        @media @tablet {
+            padding: 100px 60px;
+        }
+        @media @mobile {
+            padding: 60px 20px;
+        }
     }
     .feature__content-inner-wrap {
         text-align: center;
@@ -23,6 +29,20 @@
         overflow: hidden;
         width: 130px;
     }
+    .feature__headline {
+        color: black;
+        letter-spacing: 5px;
+        margin-bottom: 0;
+        font-weight: 300;
+    }
+    .feature__strapline {
+        color: black;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 30px;
+        max-width: 70%;
+        margin: 0px auto;
+    }
 }
 
 .featurehome1 {
@@ -31,12 +51,51 @@
     }
     .feature__content-wrap {
         padding: 160px;
+        @media @tablet {
+            padding: 100px 60px;
+        }
+        @media @mobile {
+            padding: 60px 20px;
+        }
     }
     .feature__content-inner-wrap {
         text-align: center;
     }
+    .feature__headline {
+        color: white;
+        letter-spacing: 5px;
+        margin-bottom: 0;
+        font-weight: 300;
+    }
+    .feature__strapline {
+        color: white;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 30px;
+    }
 }
 
+.feature__headline {
+    margin-bottom: 0.6em;
+    @media @tablet-860px {
+        font-size: bkscale(@font-swatch1-font-size, 0.9);
+        line-height: bkscale(@font-swatch1-line-height, 0.9);
+    }
+    @media @mobile-650px {
+        margin-bototm: 0.3em;
+        font-size: bkscale(@font-swatch1-font-size, 0.82);
+        line-height: bkscale(@font-swatch1-line-height, 0.95);
+    }
+}
+
+.feature__strapline {
+    font-size: bkscale(@font-swatch4-font-size, 0.8);
+    line-height: bkscale(@font-swatch4-line-height, 0.8);
+    @media @mobile-650px  {
+        font-size: bkscale(@font-swatch3-font-size, 0.75);
+        line-height: bkscale(@font-swatch3-line-height, 0.75);
+    }
+}
 
 // -----------------------------
 //  1. Contact Form
