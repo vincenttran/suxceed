@@ -69,7 +69,7 @@
         "font1": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "38px",
-            "font-weight": "700",
+            "font-weight": "300",
             "line-height": "44px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
@@ -77,7 +77,7 @@
         "font2": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "32px",
-            "font-weight": "700",
+            "font-weight": "300",
             "line-height": "38px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
@@ -85,7 +85,7 @@
         "font3": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "28px",
-            "font-weight": "400",
+            "font-weight": "300",
             "line-height": "32px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
@@ -93,7 +93,7 @@
         "font4": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "24px",
-            "font-weight": "700",
+            "font-weight": "300",
             "line-height": "inherit",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
@@ -101,7 +101,7 @@
         "font5": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "15px",
-            "font-weight": "400",
+            "font-weight": "300",
             "line-height": "32px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"

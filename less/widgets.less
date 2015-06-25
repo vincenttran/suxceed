@@ -31,17 +31,21 @@
     }
     .feature__headline {
         color: black;
-        letter-spacing: 5px;
+        letter-spacing: 15px;
         margin-bottom: 0;
         font-weight: 300;
+        font-size: 42px;
     }
     .feature__strapline {
         color: black;
         font-weight: 300;
-        font-size: 15px;
+        font-size: 15px!important;
         line-height: 30px;
         max-width: 70%;
         margin: 0px auto;
+        @media @tablet {
+            max-width: 100%;
+        }
     }
 }
 
@@ -63,27 +67,56 @@
     }
     .feature__headline {
         color: white;
-        letter-spacing: 5px;
+        letter-spacing: 15px;
         margin-bottom: 0;
         font-weight: 300;
+        font-size: 42px;
     }
     .feature__strapline {
         color: white;
         font-weight: 300;
-        font-size: 15px;
+        font-size: 15px!important;
         line-height: 30px;
+    }
+    .feature__button {
+        background-color: white;
+        color: black;
+        margin-top: 10px;
     }
 }
 
-.feature__headline {
-    margin-bottom: 0.6em;
+.introsuxceed {
+    .feature__headline {
     @media @tablet-860px {
         font-size: bkscale(@font-swatch1-font-size, 0.9);
-        line-height: bkscale(@font-swatch1-line-height, 0.9);
+        line-height: bkscale(@font-swatch1-line-height, 1);
     }
     @media @mobile-650px {
         margin-bototm: 0.3em;
-        font-size: bkscale(@font-swatch1-font-size, 0.82);
+        font-size: bkscale(@font-swatch1-font-size, 0.62);
+        line-height: bkscale(@font-swatch1-line-height, 0.95);
+    }
+}
+
+.feature__strapline {
+    font-size: bkscale(@font-swatch4-font-size, 0.8);
+    line-height: bkscale(@font-swatch4-line-height, 0.8);
+    @media @mobile-650px  {
+        font-size: bkscale(@font-swatch3-font-size, 0.75);
+        line-height: bkscale(@font-swatch3-line-height, 0.95);
+    }
+}
+}
+
+.featuresummer {
+    .feature__headline {
+    @media @tablet-860px {
+        font-size: bkscale(@font-swatch1-font-size, 0.9);
+        line-height: bkscale(@font-swatch1-line-height, 1);
+    }
+    @media @mobile-650px {
+        margin-bototm: 0.3em;
+        font-size: bkscale(@font-swatch1-font-size, 0.62);
         line-height: bkscale(@font-swatch1-line-height, 0.95);
     }
 }
@@ -95,6 +128,7 @@
         font-size: bkscale(@font-swatch3-font-size, 0.75);
         line-height: bkscale(@font-swatch3-line-height, 0.75);
     }
+}
 }
 
 // -----------------------------
