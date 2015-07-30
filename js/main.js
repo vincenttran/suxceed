@@ -11,6 +11,11 @@ $( ".navigation-item.folder .item-name--parent" ).each(function() {
 	});
 });
 
+// Toggles class open to display/hide the whole navigation
+$( ".navigation-toggle" ).click(function() {
+	$( "body" ).toggleClass( "nav-open" );
+});
+
 /*
 $('.basket-body').click(function(e) {
     if (e.target == this) { 
