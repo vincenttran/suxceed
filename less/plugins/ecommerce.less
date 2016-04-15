@@ -584,6 +584,49 @@ form.ecomproductslist__form {
 	text-align: center;
 }
 
+.product-item {
+
+    @media @bp-global-large {
+        padding: 40px;
+    }
+
+    @media @bp-global-medium {
+        padding: 30px;
+    }
+
+    @media @bp-global-small {
+        padding: 20px;
+    }
+
+
+
+    // Clickable item, class added via JS
+
+    &.clickable {
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1); 
+        &:hover {
+            box-shadow: 0px 0px 150px #D2D2D2;
+            background-color: white;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.5);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.5);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.5);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+    }
+}
+
 
 // Pagination
 .listing-pagination {
