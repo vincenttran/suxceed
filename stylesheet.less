@@ -40,7 +40,9 @@
 //  2. Theme Styles
 // -----------------------------
 
-
+#tdk-toolbar {
+    display: none!important;
+}
 
 // Global
 // ---------------
@@ -320,6 +322,10 @@ button,
         word-wrap: break-word;
         white-space: normal;
         line-height: 26px;
+
+        @media @tablet {
+            color: fade(@font-swatch6-color, 65%)!important;
+        }
     }
 
     &:first-child .item-name {
@@ -364,6 +370,16 @@ button,
 .bk-pt-default .extendednavigation__item-name {
     color: fade(@font-swatch6-color, 65%)!important;
 }
+
+.bk-pt-default {
+    .navigation-toggle,
+    .navigation-toggle:after, 
+    .navigation-toggle:before {
+        background-color: black;
+    }
+}
+
+
 
 ul.navigation-list--children {
     display: none;
@@ -467,7 +483,7 @@ div[data-widget-type="extendednavigation"] {
         }
 
         &:hover {
-            background-color: darken(@font-swatch6-color-hover, 15%);
+            background-color: white;
         }
     }
 
@@ -554,6 +570,11 @@ div[data-widget-type="extendednavigation"] {
     }
 }
 
+.navigation-toggle,
+.navigation-toggle:after, 
+.navigation-toggle:before {
+    background-color: white;
+}
 
 
 // Slideshow
@@ -821,7 +842,7 @@ div[data-widget-type="extendednavigation"] {
 
         // Pagination button
         button {
-            background-color: fade(@font-swatch6-color, 40%);
+            background-color: white;
             border: none;
             overflow: hidden;
             padding: 0;
@@ -956,8 +977,6 @@ div[role="main"] {
         }
     }
 }
-
-
 
 // Footer
 // ---------------
