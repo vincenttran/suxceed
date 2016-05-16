@@ -32,7 +32,6 @@
 // ---------------
 
 @import "@{templateLocal}/less/plugins/blog.less";              // Blog
-@import "@{templateLocal}/less/plugins/menu.less";              // Menu
 @import "@{templateLocal}/less/plugins/ecommerce.less";         // Ecommerce
 
 
@@ -299,7 +298,6 @@ button,
 }
 
 
-
 // Navigation
 // ---------------
 
@@ -317,7 +315,7 @@ button,
     }
 
     .item-name {
-        color: fade(@font-swatch6-color, 65%);
+        color: white!important;
         text-overflow: initial;
         word-wrap: break-word;
         white-space: normal;
@@ -360,6 +358,11 @@ button,
             top: -2px;
         }
     }
+}
+
+
+.bk-pt-default .extendednavigation__item-name {
+    color: fade(@font-swatch6-color, 65%)!important;
 }
 
 ul.navigation-list--children {
