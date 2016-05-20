@@ -7,42 +7,43 @@
 <div class="template-container">
 	<div class="default-page">
 
-	<header class="template-header">
-	<div class="container">
-		{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo-black.png')})|raw}}
-		{{widget('companyname', 'companyname', {"business": "ODENSE", "showTplWidget":"0"})|raw}}
-		{{widget('extendednavigation', 'header-nav', {"align":"right"})|raw}}
-		{{widget('ecombasket', 'shopbasket', {})|raw}}
-	</div>
-	</header>
+	   <header class="template-header">
+	       <div class="container">
+	   	   {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo-black.png')})|raw}}
+	   	   {{widget('companyname', 'companyname', {"business": "ODENSE", "showTplWidget":"0"})|raw}}
+	   	   {{widget('extendednavigation', 'header-nav', {"align":"right"})|raw}}
+	   	   {{widget('ecombasket', 'shopbasket', {})|raw}}
+	       </div>
+	   </header>
 
-	<!-- MAIN SECTION -->
-	<div role="main" id="main">
-
-		<div class="container">
-
-			<!-- MAIN ZONE -->
-			{{zone('main')|raw}}
-
-		</div>
-
-	</div>
+	   <!-- MAIN SECTION -->
+	   <div role="main" id="main">
+    
+	   	<div class="container">
+    
+	   		<!-- MAIN ZONE -->
+	   		{{zone('main')|raw}}
+    
+	   	</div>
+    
+	   </div>
 
 	<div class="default-profile">
 		{{widget('profile', 'main-profile', { 'profileType':'form', 'formTitle':'Sign up to our newsletter'})|raw}}
 	</div>
 
 		<div class="instagram">
-<!-- SnapWidget -->
-<iframe src="http://snapwidget.com/sc/?u=c3V4Y2VlZGFwcGFyZWx8aW58MTUwfDN8M3wwMDAwMDB8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=130615" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:1200px; height:150px"></iframe>
-</div>
+        <!-- SnapWidget -->
+            <iframe src="http://snapwidget.com/sc/?u=c3V4Y2VlZGFwcGFyZWx8aW58MTUwfDN8M3wwMDAwMDB8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=130615" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:1200px; height:150px"></iframe>
+        </div>
 
-</div>
+    </div>
 
 	<!-- FOOTER -->
 	{% include "includes/footer.twig" %}
 
 	</div>
+    
 </div>
 <!-- END CONTAINER -->
 
