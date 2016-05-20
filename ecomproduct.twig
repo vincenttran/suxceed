@@ -2,10 +2,16 @@
 {% block content %}
 
 <!-- CONTAINER -->
-<div class="template-container">
+<div class="template-container .bk-pt-default">
 
-	<!-- HEADER -->
-	{% include "includes/header.twig" %}
+	<header class="template-header">
+    <div class="container">
+        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo-black.png')})|raw}}
+        {{widget('companyname', 'companyname', {"business": "ODENSE", "showTplWidget":"0"})|raw}}
+        {{widget('extendednavigation', 'header-nav', {"align":"right"})|raw}}
+        {{widget('ecombasket', 'shopbasket', {})|raw}}
+    </div>
+    </header>
 
 	<!-- MAIN SECTION -->
 	<div role="main" class="ecom-product">
