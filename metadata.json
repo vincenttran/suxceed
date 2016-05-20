@@ -99,7 +99,7 @@
             "letter-spacing": "inherit"
         },
         "font5": {
-            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-family": "\"roboto\", Geneva, Tahoma, sans-serif",
             "font-size": "16px",
             "font-weight": "400",
             "line-height": "32px",
