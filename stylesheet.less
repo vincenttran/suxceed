@@ -646,7 +646,7 @@ div[data-widget-type="extendednavigation"] {
         // Slideshow title
         .image-title {
             font-family: @font-swatch1-font-family;
-            color: white;
+            color: @font-swatch9-color;
             font-size: 32px;
             line-height: 40px;
             letter-spacing: 10px;
@@ -655,6 +655,7 @@ div[data-widget-type="extendednavigation"] {
             @media @mobile-650px {
                 font-size: bkscale(@font-swatch8-font-size, 0.6);
                 line-height: bkscale(@font-swatch8-line-height, 0.6);
+                color: white;
             }
         }
 
@@ -664,6 +665,9 @@ div[data-widget-type="extendednavigation"] {
             font-size: @font-swatch9-font-size;
             line-height: @font-swatch9-line-height;
             text-align: uppercase;
+            @media @mobile-650px {
+                color: white;
+            }
         }
     }
 
