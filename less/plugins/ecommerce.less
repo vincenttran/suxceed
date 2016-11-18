@@ -378,6 +378,16 @@ button.basket-toggle {
     }
 }
 
+.ecomcategorieslist__category-list {
+	display: inline-block;
+    margin: 0;
+}
+
+.ecomcategorieslist__category-item {
+	display: inline-block;
+    margin-right: 20px;
+}
+
 
 // Bring Search and Filters Inline
 // ------------------------------------------
@@ -461,6 +471,7 @@ form.ecomproductslist__form {
 
 
 
+
 // -----------------------------
 //  3. Ecommerce Product List
 // -----------------------------
@@ -470,6 +481,9 @@ form.ecomproductslist__form {
 	// Section title, filters section
 	.listing-header {
 		padding-bottom: 20px;
+		@media @mobile {
+			display: none;
+		}
 	}
 
 	.listing-title {
@@ -564,7 +578,7 @@ form.ecomproductslist__form {
 		margin-bottom: 0;
 
 		a {
-			color: @font-swatch4-color;
+			color: @font-swatch4-color!important;
 		}
 	}
 
@@ -724,6 +738,9 @@ form.ecomproductslist__form {
 	letter-spacing: 2px;
 	font-size: 16px;
 }
+
+
+
 
 // -----------------------------
 //  4. Ecommerce Single Product
