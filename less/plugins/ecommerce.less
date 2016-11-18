@@ -380,12 +380,21 @@ button.basket-toggle {
 
 .ecomcategorieslist__category-list {
 	display: inline-block;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .ecomcategorieslist__category-item {
 	display: inline-block;
     margin-right: 20px;
+}
+
+.ecomcategorieslist__category-list-body {
+	h3 {
+		margin-bottom: 10px;
+		@media @mobile {
+			margin-bottom: 0;
+		}
+	}
 }
 
 
