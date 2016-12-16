@@ -383,6 +383,9 @@ button,
     .navigation-toggle:after, 
     .navigation-toggle:before {
         background-color: black;
+        @media @tablet {
+            background-color: black!important;
+        }
     }
 }
 
@@ -451,7 +454,7 @@ div[data-widget-type="extendednavigation"] {
     .navigation-toggle {
        
         // Displays as icon's middle bar
-        background-color: @font-swatch6-color-hover;
+        background-color: white!important;
         background-clip: content-box;
         display: inline-block;
         height: 47px;
@@ -1084,3 +1087,6 @@ div[role="main"] {
         }
     }
 }
+
+
+
