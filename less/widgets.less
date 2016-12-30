@@ -445,9 +445,16 @@ hr.rule {
         text-align: center;
     }
 
+    label {
+        display: none;
+    }
+
     // Brings button inline with input
     .button {
-        margin-top: 36px;
+        margin-top: 0px;
+        @media @mobile {
+            margin-top: 5px;
+        }
     }
 }
 
