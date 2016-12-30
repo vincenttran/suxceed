@@ -407,10 +407,23 @@ hr.rule {
 //  6. Sign Up Widget
 // -----------------------------
 
+.widget__signupform {
+    max-width: 50%;
+    margin: 0px auto;
+    @media @tablet {
+        max-width: 90%;
+    }
+}
+
 .signupform, .blogsearch {
 
 	.form-body {
 		.flex-display;
+        @media @mobile {
+            display: block;
+            width: 100%;
+            padding: 0 4%;
+        }
 	}
 
 	.form-group {
@@ -420,6 +433,11 @@ hr.rule {
 			.flex-grow(1);
 			padding-right: 15px;
 		}
+        @media @mobile {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
 	}
 
     // Hides Legend
@@ -429,7 +447,7 @@ hr.rule {
 
     // Brings button inline with input
     .button {
-        margin-top: 5px;
+        margin-top: 36px;
     }
 }
 
