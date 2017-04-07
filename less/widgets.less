@@ -63,43 +63,60 @@
     background-color: #f8f8f8;
 }
 
-
 .introsuxceed {
-    .feature__content-wrap {
         padding: 100px 50px;
         background-color: white;
+        text-align: center;
         @media @tablet {
-            padding: 60px 60px;
+            padding: 60px 0px;
         }
         @media @mobile {
-            padding: 40px 20px;
+            padding: 40px 0px;
         }
-    }
-    .feature__content-inner-wrap {
-        text-align: center;
-    }
-    .feature__button {
-        background-image:image('/images/chinese.jpg');
-        text-indent: -999px;
-        overflow: hidden;
-        width: 130px;
-    }
-    .feature__headline {
-        color: black;
+        h1 {
+            letter-spacing: 15px;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 42px;
+            line-height: 54px;
+            max-width: 80%;
+            margin: 0px auto;
+            letter-spacing: 10px;
+            @media @tablet {
+                font-size: 34.2px;
+                line-height: 44px;
+            }
+            @media @mobile {
+                font-size: 23.56px;
+                line-height: 41.8px;
+            }
+        }
+        p {
+            max-width: 60%;
+            margin: 0px auto;
+            @media @tablet {
+                max-width: 80%;
+            }
+        }
+}
+
+.title {
+    h1 {
         letter-spacing: 15px;
         margin-bottom: 0;
-        font-weight: 300;
+        font-weight: 400;
         font-size: 42px;
-    }
-    .feature__strapline {
-        color: black;
-        font-weight: 300;
-        font-size: 15px!important;
-        line-height: 30px;
-        max-width: 80%;
+        line-height: 54px;
+        max-width: 100%;
         margin: 0px auto;
+        letter-spacing: 10px;
         @media @tablet {
-            max-width: 100%;
+            font-size: 34.2px;
+            line-height: 44px;
+        }
+        @media @mobile {
+            font-size: 23.56px;
+            line-height: 41.8px;
         }
     }
 }
@@ -113,10 +130,10 @@
     .feature__content-wrap {
         padding: 100px 50px;
         @media @tablet {
-            padding: 60px 60px;
+            padding: 60px 0px;
         }
         @media @mobile {
-            padding: 40px 20px;
+            padding: 40px 0px;
         }
     }
     .feature__content-inner-wrap {
@@ -124,9 +141,9 @@
     }
     .feature__headline {
         color: white;
-        letter-spacing: 15px;
+        letter-spacing: 10px;
         margin-bottom: 0;
-        font-weight: 300;
+        font-weight: 400;
         font-size: 42px;
         max-width: 80%;
         margin: 0px auto;

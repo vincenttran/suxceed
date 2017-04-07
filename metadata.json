@@ -23,7 +23,7 @@
             "color2":"#8E8E8E",
             "color3":"#d6e8db",
             "color4":"#000000",
-            "color5":"#8c8c8c",
+            "color5":"#b5b5b5",
             "color6":"#000000",
             "color7":"#ebebeb"
         },
@@ -100,8 +100,8 @@
         },
         "font5": {
             "font-family": "\"roboto\", Geneva, Tahoma, sans-serif",
-            "font-size": "16px",
-            "font-weight": "400",
+            "font-size": "17px",
+            "font-weight": "300",
             "line-height": "32px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"

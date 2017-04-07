@@ -45,14 +45,17 @@
 
 		<!-- Homepage Feature -->
 	<div class="introsuxceed">
-		{{widget('feature', 'introsuxceed', {
-			"header": "TO MOTIVATE SUXCESS",
-			"strapline": "A UK based streetwear brand combining influences and inspiration from the oriental culture. We motivate suxcess with our clothing, to inspire everyone to do whatever they are destined to do",
-			"defaultBgImg": asset('images/feature-bg.jpg'),
-			'positionTopPercentage': '0',
-			'showBtn': true,
-			buttonText: "Lorem Ipsum"
-		})|raw}}
+
+		{{widget('content', 'h1', {
+  content: '<h1>TO MOTIVATE SUXCESS</h1>'
+})|raw}}
+{{widget('content', 'p', {
+  content: '<p>A UK based streetwear brand combining influences and inspiration from the oriental culture. We motivate suxcess with our clothing, to inspire everyone to do whatever they are destined to do</p>'
+})|raw}}
+{{widget('image', 'footerimage', {
+  'src': asset("/images/chinese.jpg")
+})|raw}}
+
 		</div>
 		<!-- End Homepage Feature -->
 		
@@ -76,7 +79,7 @@
 
 		<div class="title">
             {{widget('content', 'instagramtitle', {
-            content: '<h1>Instagram</h1>'
+            content: '<h1>INSTAGRAM</h1>'
             })|raw}}
         </div>
         <div class="text">
