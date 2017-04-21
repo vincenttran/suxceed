@@ -140,11 +140,6 @@ button.basket-toggle {
 	}
 }
 
-.fieldset--search .ecomproductslist__button:hover {
-    color: #b5d6be !important;
-    background-color: #b5d6be!important;
-}
-
 .basket-list,
 .basket-footer {
 	background-color: white;
@@ -386,11 +381,15 @@ button.basket-toggle {
 .ecomcategorieslist__category-item {
 	display: inline-block;
     margin-right: 20px;
+    @media @mobile {
+    	display: block;
+    	margin-bottom: 20px;
+    }
 }
 
 .ecomcategorieslist__category-list-body {
 	h3 {
-		margin-bottom: 10px;
+		margin-bottom: 40px;
 		@media @mobile {
 			margin-bottom: 0;
 		}
@@ -500,6 +499,7 @@ form.ecomproductslist__form {
   		text-transform: uppercase;
   		letter-spacing: 5px;
   		font-size: 26px;
+  		margin-top: 40px;
 	}
 
 	.listing-order {
@@ -1012,6 +1012,13 @@ form.ecomproductslist__form {
 // If only one product image is available show the hidden product image section
 .product-one-image .ecomproduct .product-image {
 	display: block;
+}
+
+.ecomcategorieslist__category-link {
+	padding: 20px;
+    background-color: black;
+    color: white!important;
+    margin-right: 20px;
 }
 
 
