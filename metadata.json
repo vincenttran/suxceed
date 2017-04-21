@@ -101,7 +101,7 @@
         "font5": {
             "font-family": "\"roboto\", Geneva, Tahoma, sans-serif",
             "font-size": "17px",
-            "font-weight": "300",
+            "font-weight": "400",
             "line-height": "32px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"

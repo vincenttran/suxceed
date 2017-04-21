@@ -370,7 +370,7 @@ button,
 
 
 .bk-pt-default .extendednavigation__item-name {
-    color: #8E8E8E !important;
+    color: black !important;
     text-shadow: none;
 }
 
@@ -908,8 +908,16 @@ div[role="main"] {
     padding: 55px 30px 50px;
     text-align: center;
 
+    @media @tablet-860px {
+        padding: 15px 20px 15px;
+    }
+
     @media @mobile-650px {
-        padding: 15px 0px 15px;
+        padding: 15px 20px 15px;
+    }
+
+    @media @mobile {
+        padding: 15px 20px 15px;
     }
 
     .bk-profile {
@@ -950,7 +958,7 @@ div[role="main"] {
                 padding: 0;
 
                 @media @mobile-650px {
-                    .flex(1 0 auto);
+                    display: block;
                 }
 
                 // Bring button over input
