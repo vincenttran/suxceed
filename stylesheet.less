@@ -387,6 +387,12 @@ button,
             background-color: black!important;
         }
     }
+    .default-profile div[data-widget-type="profile"] {
+        background-color: #252525;
+            .bk-profile .signupform button {
+            background-color: black;
+        }
+    }
 }
 
 
@@ -903,8 +909,7 @@ div[role="main"] {
 // ---------------
 
 .default-profile div[data-widget-type="profile"] {
-    background-color: lighten(@color-swatch7, 5%);
-    border-top: 1px solid lighten(@color-swatch7, 2%);
+    background-color: black;
     padding: 55px 30px 50px;
     text-align: center;
 
@@ -938,6 +943,7 @@ div[role="main"] {
                 float: left;
                 margin: 0 25px 0 0;
                 line-height: 60px;
+                color: white;
 
                 @media @mobile-650px {
                     font-size: bkscale(@font-swatch3-font-size, 0.9);
@@ -980,10 +986,14 @@ div[role="main"] {
 
             // Form button
             button {
-                background-color: @color-swatch4;
+                background-color: #232323;
                 color: white;
                 margin: 0;
                 height: 59px;
+
+                &:hover {
+                    background-color: #444444;
+                }
 
                 @media @mobile-650px {
                     width: 100%;
@@ -1007,9 +1017,9 @@ div[role="main"] {
 // ---------------
 
 .template-footer {
-    border-top: 1px solid @color-swatch7;
     padding: 30px 1em;
     position: relative;
+    background-color: black;
 
     @media @mobile-650px {
         padding: 25px 0;
@@ -1073,6 +1083,17 @@ div[role="main"] {
         }
     }
 
+    .social-link {
+        background-color: black;
+        height: 20px;
+        width: 20px;
+        color: white!important;
+    }
+
+    .social-link:before {
+        font-size: 20px;
+    }
+
     .bk-profile {
 
         // Remove padding from profile widget text
@@ -1089,6 +1110,7 @@ div[role="main"] {
     // Profile widget copyright styling
     .copyright {
         padding: 0;
+        color: white!important;
 
         @media @mobile-650px {
             margin-top: 12px;
