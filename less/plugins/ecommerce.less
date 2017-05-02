@@ -372,10 +372,8 @@ button.basket-toggle {
 
 .ecomcategorieslist__category-list {
 	display: inline-block;
-    margin: 0 0 10px 0;
-    @media @mobile {
-    	margin-top: 30px;
-    }
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .ecomcategorieslist__category-item {
@@ -488,10 +486,7 @@ form.ecomproductslist__form {
 
 	// Section title, filters section
 	.listing-header {
-		padding-bottom: 20px;
-		@media @mobile {
-			display: none;
-		}
+		display: none;
 	}
 
 	.listing-title {
@@ -599,8 +594,11 @@ form.ecomproductslist__form {
 	}
 }
 
-.product-item-image .image {
-	max-width: 70%!important;
+.ecomproductslist__listing-body {
+	margin-top: 60px;
+	@media @mobile {
+		margin-top: 0px;
+	}
 }
 
 .ecomproductslist__product-content {
