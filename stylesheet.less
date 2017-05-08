@@ -316,7 +316,7 @@ button,
     }
 
     .item-name {
-        color: white!important;
+        color: black!important;
         text-overflow: initial;
         word-wrap: break-word;
         white-space: normal;
@@ -356,7 +356,7 @@ button,
 
         // Navigation dropdown arrow
         span.item-name:after {
-            color: white;
+            color: black;
             content: "\f0dd";
             font-family: FontAwesome;
             font-size: 14px;
@@ -370,6 +370,12 @@ button,
 
 .bk-pt-default .extendednavigation__item-name {
     text-shadow: none;
+}
+
+.bk-pt-default {
+    .navigation-item .item-name {
+        color: white!important;
+    }
 }
 
 .extendednavigation__item-name {
@@ -458,7 +464,7 @@ div[data-widget-type="extendednavigation"] {
     .navigation-toggle {
        
         // Displays as icon's middle bar
-        background-color: white!important;
+        background-color: black!important;
         background-clip: content-box;
         display: inline-block;
         height: 47px;
@@ -501,18 +507,18 @@ div[data-widget-type="extendednavigation"] {
     .nav-open .navigation-toggle {
 
         // Toggle Button open state
-        background-color: transparent;
+        background-color: transparent!important;
         .transition(background-color 0s ease-out);
         z-index: 100000;
 
         &:before {
             top: 23px; 
-            background: @font-swatch6-color-hover; 
+            background: black!important;
             .transform(rotate(45deg));
         }
         &:after {
             bottom: 21px; 
-            background: @font-swatch6-color-hover; 
+            background: black!important;
             .transform(rotate(-45deg));
         }
     }
@@ -584,7 +590,7 @@ div[data-widget-type="extendednavigation"] {
 .navigation-toggle,
 .navigation-toggle:after, 
 .navigation-toggle:before {
-    background-color: white;
+    background-color: black!important;
 }
 
 
