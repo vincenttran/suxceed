@@ -316,15 +316,14 @@ button,
     }
 
     .item-name {
-        color: black!important;
+        color: #5f5f5f!important;
         text-overflow: initial;
         word-wrap: break-word;
         white-space: normal;
         line-height: 26px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.27);
 
         @media @tablet {
-            color: black!important;
+            color: #5f5f5f!important;
             text-shadow: none;
         }
     }
@@ -375,6 +374,9 @@ button,
 .bk-pt-default {
     .navigation-item .item-name {
         color: white!important;
+        @media @tablet {
+            color: #5f5f5f!important;
+        }
     }
 }
 
@@ -388,7 +390,7 @@ button,
     .navigation-toggle:before {
         background-color: white;
         @media @tablet {
-            background-color: black!important;
+            background-color: white!important;
         }
     }
     .default-profile div[data-widget-type="profile"] {
