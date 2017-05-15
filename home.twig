@@ -43,18 +43,30 @@
 		{{widget('profile', 'main-profile', { 'profileType':'form', 'formTitle':'Sign up to our newsletter'})|raw}}
 	</div>
 
+	<div class="bestsellertitle">
+			{{widget('content', 'h1', {
+  content: '<h1>OUR BEST SELLERS</h1>'
+})|raw}}
+</div>
+
 		<!-- Homepage Feature -->
 	<div class="introsuxceed">
 
-		{{widget('content', 'h1', {
-  content: '<h1>TO MOTIVATE SUXCESS</h1>'
+	<div class="bestseller">
+{{widget('image', 'bestseller', {
+  'src': asset("/images/products/xtee.jpg")
 })|raw}}
-{{widget('content', 'p', {
-  content: '<p>A UK based streetwear brand combining influences and inspiration from the oriental culture. We motivate suxcess with our clothing, to inspire everyone to do whatever they are destined to do</p>'
+</div>
+	<div class="bestseller1">
+{{widget('image', 'bestseller1', {
+  'src': asset("/images/products/whiteeleven.jpg")
 })|raw}}
-{{widget('image', 'footerimage', {
-  'src': asset("/images/chinese.jpg")
+</div>
+	<div class="bestseller2">
+{{widget('image', 'bestseller2', {
+  'src': asset("/images/products/blackvest.jpg")
 })|raw}}
+</div>
 
 		</div>
 		<!-- End Homepage Feature -->
