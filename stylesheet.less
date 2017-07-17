@@ -119,7 +119,7 @@
     width: 100%;
     position: absolute;
     bottom: 0px;
-    z-index: 99999;
+    z-index: 999;
     p {
         color: white!important;
         font-weight: bold;
@@ -689,7 +689,10 @@ div[data-widget-type="extendednavigation"] {
     .slides-list {
         position: relative;
         height: 650px;
-        height: 100vh;
+        height: 70vh;
+        @media @mobile {
+            height: 600px;
+        }
     }
 
     // Overide the default display method to be able to transition
@@ -716,7 +719,7 @@ div[data-widget-type="extendednavigation"] {
         background-position: center center;
         background-repeat: no-repeat;
         min-height: 0;
-        height: 100vh;
+        height: 70vh;
     }
 
     // Image title and description
