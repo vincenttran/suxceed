@@ -36,7 +36,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1492470624149643');
 fbq('track', 'PageView');
 fbq('track', 'Purchase', {
-value: {{ total_price | money_without_currency }},
+value: '{{ total_price | money_without_currency }}',
 currency: 'GBP'
 });
 
